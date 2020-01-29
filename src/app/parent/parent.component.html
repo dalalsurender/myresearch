@@ -1,0 +1,18 @@
+<p>parent works!</p>
+Message: {{searchTransNum}}
+
+<mat-tab-group [selectedIndex]="SearchSelectedTab">
+  <mat-tab>
+      <ng-template matTabLabel>
+        <span matBadge="2" matBadgeOverlap="false" >Plans</span>
+      </ng-template>
+      <app-child1 (messageEvent)="receiveMessage($event)"></app-child1>
+  </mat-tab>
+  <mat-tab matColumnDef>
+      <ng-template matTabLabel>
+          <span matBadge="2" matBadgeOverlap="false" matBadgeColor="accent">Permit</span>
+      </ng-template>
+      <app-child2 [reviewTransNum]="searchTransNum"></app-child2>
+      <!-- <app-child2></app-child2> -->
+  </mat-tab>
+</mat-tab-group>
